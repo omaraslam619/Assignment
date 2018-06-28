@@ -38,6 +38,19 @@
        
        
      }
+        
+        .image{
+        
+        background-color:cornsilk;
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        color: Black;
+        float: left ;
+       
+       
+     }
+     
        .left{
         
         background-color: cornsilk;
@@ -123,6 +136,56 @@ function f6()
     document.abc.src='img/a.jpg';
     
 }
+function fee()
+{   var f;
+    var d;
+    var  c = document.getElementById('course').value;
+   
+    if( c == "bca" )
+    {   f=58000;
+        d=3;
+        document.getElementById('fees').value=f;
+         document.getElementById('duration').value=d;
+           document.getElementById('ta').value=d*f;
+    }
+    else if( c == "bba" )
+    {
+        d=3;
+        f=72000;
+        document.getElementById('fees').value=f;
+          document.getElementById('duration').value=d;
+            document.getElementById('ta').value=d*f;
+    }
+    else if( c == "mba" )
+    {    d=2;
+        f=120000;
+        document.getElementById('fees').value=f;
+          document.getElementById('duration').value=d;
+            document.getElementById('ta').value=d*f;
+    }
+    else if ( c == "btech" )
+    {
+        d=4;
+       f=70000;
+       document.getElementById('fees').value=f; 
+         document.getElementById('duration').value=d;
+           document.getElementById('ta').value=d*f;  
+   
+    }
+    else 
+    {    var com = "No course Selected"
+        document.getElementById('fees').value=f;
+          document.getElementById('duration').value=f;
+            document.getElementById('ta').value=f;
+        
+   
+   
+   
+    }
+    
+    
+}
+
 
 </script>
 <body>
@@ -142,14 +205,30 @@ function f6()
 <a href="under.php" >About Us </a>
 </div >
 
-<form method="post" >
-<div class="left">
-<br /><br /><br /><br /><br /><br /><br /><br />
-<img src="img/a.jpg" name='abc' onmouseover="f5()" onmouseout="f6()"  />
+<div class="image">
+ <img src="img/a.jpg" name='abc' onmouseover="f5()" onmouseout="f6()"  />
+ </div>
 
+
+<div class="left">
+<form method="post">
+<br /><br />
+<h1>Fee Calculator</h1>
+<div>Course : <select name="city" id="course" onblur="fee()" required="required">
+<option value="">Select Course </option><option value="bca">BCA</option>
+<option value="bba">BBA</option>
+<option value="btech">B.Tech</option>
+<option value="mba">MBA</option>
+
+</select>
+ <input type="text" name="course" id="fees"  placeholder="Fee"  readonly="" /> </div><br />
+<div>Duration : <input type="text" name="course" id="duration"  placeholder="Course" readonly=""  /> </div><br />
+<div>Total Fee : <input type="text" name="course" id="ta"  placeholder="Total Fee"  readonly=""  /> </div><br />
+<div> <input type="submit" id="submit"   /> </div>
+</form>
 </div>
 <div class="right" >
-
+<form method="post" >
 <h1><b><i> Registeration Form </i></b></h1>
 <div></a><br/> Name :<input type="text" name="name" id="name" placeholder="Eg.(Mr XYZ)" onkeyup="f1()"  required /></div>
 <div></a><br/> Username :<input type="text" name="uname" id="uname" placeholder="xyz123" onblur="f2()"   required /></div>
